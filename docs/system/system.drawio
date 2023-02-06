@@ -1,0 +1,61 @@
+<mxfile host="65bd71144e">
+    <diagram id="Z2fyHJ_zax-JIlK7QUhS" name="ページ1">
+        <mxGraphModel dx="662" dy="480" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="加盟企業" style="shape=umlActor;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="140" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="ポイントシステム" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="会員" style="shape=umlActor;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="140" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="B社" style="shape=umlActor;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="340" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2" target="4" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="320" y="270" as="sourcePoint"/>
+                        <mxPoint x="370" y="220" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="270" y="170"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="200" y="170" as="sourcePoint"/>
+                        <mxPoint x="335" y="240" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="335" y="170"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="6" target="4" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="485" y="180" as="sourcePoint"/>
+                        <mxPoint x="345" y="250" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="270" y="370"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" value="&lt;div&gt;①&lt;/div&gt;&lt;div&gt;・加盟企業商品を登録する&lt;/div&gt;" style="html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="70" width="170" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="&lt;div&gt;②&lt;/div&gt;&lt;div&gt;・ポイントを利用する&lt;/div&gt;&lt;div&gt;・ポイントを獲得する&lt;/div&gt;" style="html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="70" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="&lt;div&gt;③&lt;/div&gt;・加盟企業商品の追加にともない、横断分析用商品が登録済みか確認する&lt;br&gt;&lt;div&gt;・横断分析用商品コードを加盟企業商品に設定する&lt;/div&gt;" style="html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="430" width="410" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="会計サービス" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
