@@ -13,13 +13,13 @@ companies:
 shops:
   columns:
     id:
-    store_code: string # 店舗コード
     company_id: string # 企業コード
+    manage_shop_id: string # 店舗コード
     name: string # 店舗名
     address: string # 所在地
     timestamps:
   indexes:
-    - columns: [store_code, company_id]
+    - columns: [manage_shop_id, company_id]
       type: unique
 
 # 横断分析用商品
@@ -37,7 +37,7 @@ company_items:
   columns:
     id:
     company_id: string # 加盟企業コード
-    item_id: string # 加盟企業商品コード
+    manage_item_id: string # 加盟企業商品コード
     name: string # 加盟企業商品名
     cross_section_item_id: # 横断分析用商品コード
       type: string
@@ -48,7 +48,7 @@ company_items:
       nullable:
     timestamps:
   indexes:
-    - columns: [item_id, company_id]
+    - columns: [manage_item_id, company_id]
       type: unique      
   foreign_keys:
     - columns: [company_id]

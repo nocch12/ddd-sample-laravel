@@ -16,8 +16,7 @@ payments:
   columns:
     id: # レシート番号
     user_id: unsignedBigInteger # 会員コード
-    target_company_id: string # 加盟企業コード
-    target_store_code: string # 店舗コード
+    shop_id: unsignedBigInteger # 店舗
     payed_at: dateTime # 支払日
     used_point: # ポイント利用
       type: double
@@ -26,11 +25,8 @@ payments:
         - 3
     timestamps:
   foreign_keys:
-    - columns: [target_company_id]
+    - columns: [shop_id]
       references: [id]
-      table: companies
-    - columns: [target_store_code]
-      references: [store_code]
       table: shops
 # 支払い方法明細
 payment_detail_methods:
@@ -57,8 +53,7 @@ payment_detail_items:
   columns:
     id:
     payment_id: unsignedBigInteger # 支払いコード
-    company_id: string # 加盟企業コード
-    item_id: string # 加盟企業商品コード
+    item_id: unsignedBigInteger # 商品
     unit_price: unsignedInteger # 商品単価
     quantity: unsignedInteger # 個数
     assigned_point: # 付与ポイント
@@ -72,8 +67,5 @@ payment_detail_items:
       references: [id]
       table: payments
     - columns: [item_id]
-      references: [item_id]
-      table: company_items
-    - columns: [company_id]
       references: [id]
-      table: companies
+      table: company_items
