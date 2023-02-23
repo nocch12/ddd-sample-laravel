@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe33f98a750b8c5a51b30c78bd3fab21",
+    "content-hash": "e075d78645e298d674d90f944ef3116b",
     "packages": [
         {
             "name": "brick/math",
@@ -7710,6 +7710,80 @@
             "time": "2023-01-03T19:28:04+00:00"
         },
         {
+            "name": "symfony/yaml",
+            "version": "v6.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "2bbfbdacc8a15574f8440c4838ce0d7bb6c86b19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/2bbfbdacc8a15574f8440c4838ce0d7bb6c86b19",
+                "reference": "2bbfbdacc8a15574f8440c4838ce0d7bb6c86b19",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/polyfill-ctype": "^1.8"
+            },
+            "conflict": {
+                "symfony/console": "<5.4"
+            },
+            "require-dev": {
+                "symfony/console": "^5.4|^6.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
+            },
+            "bin": [
+                "Resources/bin/yaml-lint"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Loads and dumps YAML files",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/yaml/tree/v6.2.5"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-01-10T18:53:53+00:00"
+        },
+        {
             "name": "theseer/tokenizer",
             "version": "1.2.1",
             "source": {
@@ -7758,6 +7832,65 @@
                 }
             ],
             "time": "2021-07-28T10:34:58+00:00"
+        },
+        {
+            "name": "ucan-lab/laravel-dacapo",
+            "version": "5.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ucan-lab/laravel-dacapo.git",
+                "reference": "8c5642d6f4f3806f3dedba7d6d7ea073845b438d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ucan-lab/laravel-dacapo/zipball/8c5642d6f4f3806f3dedba7d6d7ea073845b438d",
+                "reference": "8c5642d6f4f3806f3dedba7d6d7ea073845b438d",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">=9.21.0",
+                "php": "^8.0.2",
+                "symfony/yaml": "^6.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "7.17.0",
+                "phpunit/phpunit": "9.5.27",
+                "roave/security-advisories": "dev-latest"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "UcanLab\\LaravelDacapo\\Providers\\ConsoleServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "UcanLab\\LaravelDacapo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ucan-lab",
+                    "email": "35098175+ucan-lab@users.noreply.github.com"
+                }
+            ],
+            "description": "Laravel migration support tools",
+            "keywords": [
+                "dacapo",
+                "laravel",
+                "migration"
+            ],
+            "support": {
+                "issues": "https://github.com/ucan-lab/laravel-dacapo/issues",
+                "source": "https://github.com/ucan-lab/laravel-dacapo/tree/5.2.0"
+            },
+            "time": "2022-12-31T13:26:48+00:00"
         }
     ],
     "aliases": [],

@@ -1,0 +1,79 @@
+# 支払い方法
+payment_methods:
+  columns:
+    id: unsignedBigInteger # 支払い方法コード
+    name: string # 支払い方法名
+    point_rate: # ポイント付与率
+      type: double
+      args: 
+        - 4
+        - 1
+  indexes:
+    - columns: [id]
+      type: primary
+# 支払い
+payments:
+  columns:
+    id: # レシート番号
+    user_id: unsignedBigInteger # 会員コード
+    target_company_id: string # 加盟企業コード
+    target_store_code: string # 店舗コード
+    payed_at: dateTime # 支払日
+    used_point: # ポイント利用
+      type: double
+      args: 
+        - 8
+        - 3
+    timestamps:
+  foreign_keys:
+    - columns: [target_company_id]
+      references: [id]
+      table: companies
+    - columns: [target_store_code]
+      references: [store_code]
+      table: shops
+# 支払い方法明細
+payment_detail_methods:
+  columns:
+    id:
+    payment_id: unsignedBigInteger # 支払いコード
+    method_id: unsignedBigInteger # 支払い方法コード
+    payment_amount: unsignedInteger # 支払い金額
+    assigned_point: # 付与ポイント
+      type: double
+      args:
+        - 8
+        - 3
+    timestamps:
+  foreign_keys:
+    - columns: [payment_id]
+      references: [id]
+      table: payments
+    - columns: [method_id]
+      references: [id]
+      table: payment_methods
+# 支払い商品明細
+payment_detail_items:
+  columns:
+    id:
+    payment_id: unsignedBigInteger # 支払いコード
+    company_id: string # 加盟企業コード
+    item_id: string # 加盟企業商品コード
+    unit_price: unsignedInteger # 商品単価
+    quantity: unsignedInteger # 個数
+    assigned_point: # 付与ポイント
+      type: double
+      args:
+        - 8
+        - 3
+    timestamps:
+  foreign_keys:
+    - columns: [payment_id]
+      references: [id]
+      table: payments
+    - columns: [item_id]
+      references: [item_id]
+      table: company_items
+    - columns: [company_id]
+      references: [id]
+      table: companies
