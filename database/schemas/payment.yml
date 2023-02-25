@@ -1,16 +1,38 @@
-# 支払い方法
-payment_methods:
+# ポイント設定
+point_settings:
   columns:
-    id: unsignedBigInteger # 支払い方法コード
-    name: string # 支払い方法名
+    id: # ポイント設定コード
+    begin: dateTime # 適用開始 
+    end: dateTime # 適用終了
     point_rate: # ポイント付与率
       type: double
       args: 
         - 4
         - 1
+# 支払い方法
+payment_methods:
+  columns:
+    id: unsignedBigInteger # 支払い方法コード
+    name: string # 支払い方法名
   indexes:
     - columns: [id]
       type: primary
+# 支払い方法
+payment_method_point_setting:
+  columns:
+    payment_method_id: unsignedBigInteger # 支払い方法コード
+    point_setting_id: unsignedBigInteger # 支払い方法コード
+  indexes:
+    - columns: [payment_method_id, point_setting_id]
+      type: unique
+      name: payment_method_point_setting_unique
+  foreign_keys:
+    - columns: [payment_method_id]
+      references: [id]
+      table: payment_methods
+    - columns: [point_setting_id]
+      references: [id]
+      table: point_settings
 # 支払い
 payments:
   columns:
