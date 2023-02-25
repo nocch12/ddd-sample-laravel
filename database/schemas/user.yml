@@ -1,12 +1,12 @@
 users:
   columns:
     id:
-    name: string #名前
-    joined_at: dateTime #入会日
-    address: string #住所
-    gender: unsignedTinyInteger #性別
-    birth_date: date #誕生日
-    point_balance: #ポイント残高
+    name: string # 名前
+    joined_at: dateTime # 入会日
+    address: string # 住所
+    gender: unsignedTinyInteger # 性別
+    birth_date: date # 誕生日
+    point_balance: # ポイント残高
       type: double
       args: 
         - 8
