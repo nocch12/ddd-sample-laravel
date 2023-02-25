@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('payment_methods', function (Blueprint $table) {
-            $table->unsignedBigInteger('id');
-            $table->string('name');
+        Schema::table('payment_method_point_setting', function (Blueprint $table) {
+            $table->unique(['payment_method_id', 'point_setting_id'], 'payment_method_point_setting_unique');
         });
     }
 
@@ -26,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payment_methods');
+        Schema::table('payment_method_point_setting', function (Blueprint $table) {
+            $table->dropUnique('payment_method_point_setting_unique');
+        });
     }
 };

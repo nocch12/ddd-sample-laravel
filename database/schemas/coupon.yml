@@ -1,0 +1,65 @@
+# クーポン
+coupons:
+  columns:
+    id: string # クーポンコード
+    name: string # 名前
+    company_id: string # 企画加盟企業コード
+    distributionLimit: unsignedInteger # 配布上限数
+    distribution_begin: dateTime # 配布開始日
+    distribution_end: dateTime # 配布終了日
+    use_begin: dateTime # 利用開始日
+    use_end: dateTime # 利用終了日
+    point_rate: # ポイント付与率
+      type: double
+      args: 
+        - 4
+        - 1
+    timestamps:
+# クーポン設定対象店舗
+coupon_shops:
+  columns:
+    coupon_id: string # クーポンコード
+    shop_id: unsignedBigInteger # 店舗
+    timestamps:
+  foreign_keys:
+    - columns: [shop_id]
+      references: [id]
+      table: shops
+  indexes:
+    - columns: [coupon_id, shop_id]
+      type: unique      
+# クーポン設定対象商品
+coupon_items:
+  columns:
+    coupon_id: string # クーポンコード
+    company_item_id: unsignedBigInteger # 商品
+    timestamps:
+  foreign_keys:
+    - columns: [company_item_id]
+      references: [id]
+      table: company_items
+  indexes:
+    - columns: [coupon_id, company_item_id]
+      type: unique      
+# クーポン配布
+coupon_distributions:
+  columns:
+    coupon_id: string # クーポンコード
+    user_id: string # 会員コード
+    distribution_status: # 配布状況フラグ
+      type: unsignedInteger
+      default: 0
+    distributed_at: dateTime # 配布日時
+    timestamps:
+  indexes:
+    - columns: [coupon_id, user_id]
+      type: unique      
+# クーポン利用
+coupon_uses:
+  columns:
+    coupon_id: string # クーポンコード
+    user_id: string # 会員コード
+    timestamps:
+  indexes:
+    - columns: [coupon_id, user_id]
+      type: unique      

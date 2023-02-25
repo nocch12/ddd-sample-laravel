@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('payment_methods', function (Blueprint $table) {
-            $table->unsignedBigInteger('id');
-            $table->string('name');
+        Schema::table('coupon_items', function (Blueprint $table) {
+            $table->foreign('company_item_id')->references('id')->on('company_items');
         });
     }
 
@@ -26,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payment_methods');
+        Schema::table('coupon_items', function (Blueprint $table) {
+            $table->dropForeign(['company_item_id']);
+        });
     }
 };
