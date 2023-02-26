@@ -45,7 +45,7 @@ coupon_items:
 coupon_distributions:
   columns:
     coupon_id: string # クーポンコード
-    user_id: string # 会員コード
+    user_id: unsignedInteger # 会員コード
     distribution_status: # 配布状況フラグ
       type: unsignedInteger
       default: 0
@@ -58,7 +58,7 @@ coupon_distributions:
 coupon_uses:
   columns:
     coupon_id: string # クーポンコード
-    user_id: string # 会員コード
+    user_id: unsignedInteger # 会員コード
     timestamps:
   indexes:
     - columns: [coupon_id, user_id]

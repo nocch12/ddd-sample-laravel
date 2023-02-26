@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('coupon_uses', function (Blueprint $table) {
             $table->string('coupon_id');
-            $table->string('user_id');
+            $table->unsignedInteger('user_id');
             $table->timestamps();
         });
     }

@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class CouponShop extends Model
 {
     use HasFactory;
-
-    protected array $guarded = ['id', 'created_at', 'updated_at'];
+    
+    /** guarded */
+    protected array $guarded = ['coupon_id', 'shop_id', 'created_at', 'updated_at'];
 }
