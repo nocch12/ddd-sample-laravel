@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * App\Models\PaymentMethod
@@ -21,6 +22,13 @@ class PaymentMethod extends Model
 {
     use HasFactory;
     
+    /** モデルのIDを自動増分するか */
+    public $incrementing = false;
     /** guarded */
     protected $guarded = ['created_at', 'updated_at'];
+
+    public function pointSettings(): BelongsToMany
+    {
+        return $this->belongsToMany(PointSetting::class, 'payment_method_point_setting', 'payment_method_id', 'point_setting_id');
+    }
 }

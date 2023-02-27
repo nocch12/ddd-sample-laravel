@@ -18,6 +18,7 @@ return new class extends Migration
             $table->dateTime('begin');
             $table->dateTime('end');
             $table->double('point_rate', 4, 1);
+            $table->timestamps();
         });
     }
 

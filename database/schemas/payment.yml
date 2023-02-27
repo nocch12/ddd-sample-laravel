@@ -9,11 +9,13 @@ point_settings:
       args: 
         - 4
         - 1
+    timestamps:
 # 支払い方法
 payment_methods:
   columns:
     id: unsignedBigInteger # 支払い方法コード
     name: string # 支払い方法名
+    timestamps:
   indexes:
     - columns: [id]
       type: primary
@@ -22,6 +24,7 @@ payment_method_point_setting:
   columns:
     payment_method_id: unsignedBigInteger # 支払い方法コード
     point_setting_id: unsignedBigInteger # 支払い方法コード
+    timestamps:
   indexes:
     - columns: [payment_method_id, point_setting_id]
       type: unique

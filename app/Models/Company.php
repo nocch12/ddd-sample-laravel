@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * App\Models\Company
@@ -34,4 +35,14 @@ class Company extends Model
     protected $keyType = 'string';
     /** guarded */
     protected $guarded = ['created_at', 'updated_at'];
+
+    public function shops(): HasMany
+    {
+        return $this->hasMany(Shop::class, 'company_id', 'id');
+    }
+
+    public function companyItems(): HasMany
+    {
+        return $this->hasMany(CompanyItem::class, 'company_id', 'id');
+    }
 }

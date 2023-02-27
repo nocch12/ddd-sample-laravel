@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * App\Models\Payment
@@ -33,4 +34,14 @@ class Payment extends Model
     
     /** guarded */
     protected $guarded = ['user_id', 'shop_id', 'created_at', 'updated_at'];
+    
+    public function paymentDetailItems(): HasMany
+    {
+        return $this->hasMany(PaymentDetailItem::class, 'payment_id', 'id');
+    }
+
+    public function paymentDetailMethods(): HasMany
+    {
+        return $this->hasMany(PaymentDetailMethod::class, 'payment_id', 'id');
+    }
 }

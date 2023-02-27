@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('payment_method_point_setting', function (Blueprint $table) {
             $table->unsignedBigInteger('payment_method_id');
             $table->unsignedBigInteger('point_setting_id');
+            $table->timestamps();
         });
     }
 

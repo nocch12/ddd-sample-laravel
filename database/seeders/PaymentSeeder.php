@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Payment;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder
+class PaymentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(10)->create();
+        Payment::factory(1)
+            ->create();
     }
 }

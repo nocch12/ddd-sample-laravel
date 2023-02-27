@@ -25,6 +25,10 @@ class CrossSectionItem extends Model
 {
     use HasFactory;
     
+    /** モデルのIDを自動増分するか */
+    public $incrementing = false;
+    /** 自動増分IDのデータ型 */
+    protected $keyType = 'string';
     /** guarded */
     protected $guarded = ['company_id', 'created_at', 'updated_at'];
 }
