@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('coupon_shops', function (Blueprint $table) {
+            $table->foreign('coupon_id')->references('id')->on('coupons');
             $table->foreign('shop_id')->references('id')->on('shops');
         });
     }
@@ -26,6 +27,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('coupon_shops', function (Blueprint $table) {
+            $table->dropForeign(['coupon_id']);
             $table->dropForeign(['shop_id']);
         });
     }

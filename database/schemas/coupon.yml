@@ -15,51 +15,78 @@ coupons:
         - 4
         - 1
     timestamps:
+  indexes:
+    - columns: [id]
+      type: primary
+  foreign_keys:
+    - columns: [company_id]
+      references: [id]
+      table: companies
 # クーポン設定対象店舗
 coupon_shops:
   columns:
     coupon_id: string # クーポンコード
     shop_id: unsignedBigInteger # 店舗
     timestamps:
+  indexes:
+    - columns: [coupon_id, shop_id]
+      type: unique
   foreign_keys:
+    - columns: [coupon_id]
+      references: [id]
+      table: coupons
     - columns: [shop_id]
       references: [id]
       table: shops
-  indexes:
-    - columns: [coupon_id, shop_id]
-      type: unique      
 # クーポン設定対象商品
 coupon_items:
   columns:
     coupon_id: string # クーポンコード
     company_item_id: unsignedBigInteger # 商品
     timestamps:
-  foreign_keys:
-    - columns: [company_item_id]
-      references: [id]
-      table: company_items
   indexes:
     - columns: [coupon_id, company_item_id]
-      type: unique      
+      type: unique
+  foreign_keys:
+    - columns: [coupon_id]
+      references: [id]
+      table: coupons
+    - columns: [company_item_id]
+      references: [id]
+      table: payments
 # クーポン配布
 coupon_distributions:
   columns:
     coupon_id: string # クーポンコード
-    user_id: unsignedInteger # 会員コード
+    user_id: unsignedBigInteger # 会員コード
     distribution_status: # 配布状況フラグ
-      type: unsignedInteger
+      type: unsignedTinyInteger
       default: 0
     distributed_at: dateTime # 配布日時
     timestamps:
   indexes:
     - columns: [coupon_id, user_id]
-      type: unique      
+      type: unique
+  foreign_keys:
+    - columns: [coupon_id]
+      references: [id]
+      table: coupons
+    - columns: [user_id]
+      references: [id]
+      table: users
 # クーポン利用
 coupon_uses:
   columns:
+    payment_id: unsignedBigInteger # レシート番号
     coupon_id: string # クーポンコード
-    user_id: unsignedInteger # 会員コード
     timestamps:
   indexes:
-    - columns: [coupon_id, user_id]
-      type: unique      
+    - columns: [payment_id, coupon_id]
+      type: unique
+  foreign_keys:
+    - columns: [payment_id]
+      references: [id]
+      table: payments
+    - columns: [coupon_id]
+      references: [id]
+      table: coupons

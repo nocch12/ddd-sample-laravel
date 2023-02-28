@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('coupon_distributions', function (Blueprint $table) {
-            $table->string('coupon_id');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedTinyInteger('distribution_status')->default(0);
-            $table->dateTime('distributed_at');
-            $table->timestamps();
+        Schema::table('coupon_uses', function (Blueprint $table) {
+            $table->foreign('payment_id')->references('id')->on('payments');
+            $table->foreign('coupon_id')->references('id')->on('coupons');
         });
     }
 
@@ -29,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coupon_distributions');
+        Schema::table('coupon_uses', function (Blueprint $table) {
+            $table->dropForeign(['payment_id']);
+            $table->dropForeign(['coupon_id']);
+        });
     }
 };

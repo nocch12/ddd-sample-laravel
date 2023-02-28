@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('coupon_uses', function (Blueprint $table) {
-            $table->unique(['coupon_id', 'user_id']);
+            $table->unique(['payment_id', 'coupon_id']);
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('coupon_uses', function (Blueprint $table) {
-            $table->dropUnique(['coupon_id', 'user_id']);
+            $table->dropUnique(['payment_id', 'coupon_id']);
         });
     }
 };
