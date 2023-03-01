@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|CompanyItem whereManageItemId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CompanyItem whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CompanyItem whereUpdatedAt($value)
+ * @method static \Database\Factories\CompanyItemFactory factory($count = null, $state = [])
  * @mixin \Eloquent
  */
 class CompanyItem extends Model

@@ -25,6 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Shop whereManageShopId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Shop whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Shop whereUpdatedAt($value)
+ * @method static \Database\Factories\ShopFactory factory($count = null, $state = [])
  * @mixin \Eloquent
  */
 class Shop extends Model

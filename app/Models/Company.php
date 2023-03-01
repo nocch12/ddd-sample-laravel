@@ -23,6 +23,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereJoinedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereUpdatedAt($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\CompanyItem> $companyItems
+ * @property-read int|null $company_items_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Shop> $shops
+ * @property-read int|null $shops_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\CompanyItem> $companyItems
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Shop> $shops
  * @mixin \Eloquent
  */
 class Company extends Model

@@ -18,7 +18,7 @@ class ShopFactory extends Factory
     {
         return [
             // 'company_id'     => Company::factory(),
-            'manage_shop_id' => sprintf('%03d', $this->faker->numberBetween(1, 300)),
+            'manage_shop_id' => sprintf('%03d', $this->faker->unique()->numberBetween(1, 300)),
             'name'           => $this->faker->city(),
             'address'        => $this->faker->address(),
         ];

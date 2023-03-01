@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|CouponDistribution whereDistributionStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CouponDistribution whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CouponDistribution whereUserId($value)
+ * @method static \Database\Factories\CouponDistributionFactory factory($count = null, $state = [])
  * @mixin \Eloquent
  */
 class CouponDistribution extends Model

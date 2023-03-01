@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|PaymentDetailItem whereQuantity($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PaymentDetailItem whereUnitPrice($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PaymentDetailItem whereUpdatedAt($value)
+ * @method static \Database\Factories\PaymentDetailItemFactory factory($count = null, $state = [])
  * @mixin \Eloquent
  */
 class PaymentDetailItem extends Model

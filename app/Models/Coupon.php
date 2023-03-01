@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * App\Models\Coupon
@@ -33,12 +34,34 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Coupon whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Coupon whereUseBegin($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Coupon whereUseEnd($value)
+ * @property int $distribution_limit
+ * @property string $coupon_type
+ * @method static \Database\Factories\CouponFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder|Coupon whereCouponType($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\CompanyItem> $items
+ * @property-read int|null $items_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Shop> $shops
+ * @property-read int|null $shops_count
  * @mixin \Eloquent
  */
 class Coupon extends Model
 {
     use HasFactory;
     
+    /** モデルのIDを自動増分するか */
+    public $incrementing = false;
+    /** 自動増分IDのデータ型 */
+    protected $keyType = 'string';
     /** guarded */
     protected $guarded = ['company_id', 'created_at', 'updated_at'];
+
+    public function shops(): BelongsToMany
+    {
+        return $this->belongsToMany(Shop::class);
+    }
+
+    public function items(): BelongsToMany
+    {
+        return $this->belongsToMany(CompanyItem::class, 'coupon_item', 'coupon_id', 'company_item_id');
+    }
 }

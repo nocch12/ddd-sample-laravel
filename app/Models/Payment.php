@@ -26,6 +26,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @method static \Illuminate\Database\Eloquent\Builder|Payment whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Payment whereUsedPoint($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Payment whereUserId($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\PaymentDetailItem> $paymentDetailItems
+ * @property-read int|null $payment_detail_items_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\PaymentDetailMethod> $paymentDetailMethods
+ * @property-read int|null $payment_detail_methods_count
+ * @method static \Database\Factories\PaymentFactory factory($count = null, $state = [])
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\PaymentDetailItem> $paymentDetailItems
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\PaymentDetailMethod> $paymentDetailMethods
  * @mixin \Eloquent
  */
 class Payment extends Model

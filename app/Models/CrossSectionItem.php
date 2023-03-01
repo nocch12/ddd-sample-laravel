@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|CrossSectionItem whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CrossSectionItem whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CrossSectionItem whereUpdatedAt($value)
+ * @method static \Database\Factories\CrossSectionItemFactory factory($count = null, $state = [])
  * @mixin \Eloquent
  */
 class CrossSectionItem extends Model

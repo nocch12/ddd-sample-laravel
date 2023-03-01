@@ -19,6 +19,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|PointSetting whereEnd($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PointSetting whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PointSetting wherePointRate($value)
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|PointSetting whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PointSetting whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class PointSetting extends Model

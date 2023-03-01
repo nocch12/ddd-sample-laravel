@@ -19,6 +19,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|CouponUse whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CouponUse whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CouponUse whereUserId($value)
+ * @property int $payment_id
+ * @method static \Illuminate\Database\Eloquent\Builder|CouponUse wherePaymentId($value)
  * @mixin \Eloquent
  */
 class CouponUse extends Model
