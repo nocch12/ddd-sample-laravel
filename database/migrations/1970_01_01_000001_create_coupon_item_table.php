@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('coupon_shops', function (Blueprint $table) {
+        Schema::create('coupon_item', function (Blueprint $table) {
             $table->string('coupon_id');
-            $table->unsignedBigInteger('shop_id');
+            $table->unsignedBigInteger('company_item_id');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coupon_shops');
+        Schema::dropIfExists('coupon_item');
     }
 };

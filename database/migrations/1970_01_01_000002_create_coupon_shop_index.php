@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('coupon_items', function (Blueprint $table) {
-            $table->foreign('coupon_id')->references('id')->on('coupons');
-            $table->foreign('company_item_id')->references('id')->on('payments');
+        Schema::table('coupon_shop', function (Blueprint $table) {
+            $table->unique(['coupon_id', 'shop_id']);
         });
     }
 
@@ -26,9 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('coupon_items', function (Blueprint $table) {
-            $table->dropForeign(['coupon_id']);
-            $table->dropForeign(['company_item_id']);
+        Schema::table('coupon_shop', function (Blueprint $table) {
+            $table->dropUnique(['coupon_id', 'shop_id']);
         });
     }
 };

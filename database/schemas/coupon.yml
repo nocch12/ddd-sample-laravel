@@ -4,7 +4,7 @@ coupons:
     id: string # クーポンコード
     name: string # 名前
     company_id: string # 企画加盟企業コード
-    distributionLimit: unsignedInteger # 配布上限数
+    distribution_limit: unsignedInteger # 配布上限数
     distribution_begin: dateTime # 配布開始日
     distribution_end: dateTime # 配布終了日
     use_begin: dateTime # 利用開始日
@@ -14,6 +14,7 @@ coupons:
       args: 
         - 4
         - 1
+    coupon_type: string
     timestamps:
   indexes:
     - columns: [id]
@@ -23,7 +24,7 @@ coupons:
       references: [id]
       table: companies
 # クーポン設定対象店舗
-coupon_shops:
+coupon_shop:
   columns:
     coupon_id: string # クーポンコード
     shop_id: unsignedBigInteger # 店舗
@@ -39,7 +40,7 @@ coupon_shops:
       references: [id]
       table: shops
 # クーポン設定対象商品
-coupon_items:
+coupon_item:
   columns:
     coupon_id: string # クーポンコード
     company_item_id: unsignedBigInteger # 商品
@@ -53,7 +54,7 @@ coupon_items:
       table: coupons
     - columns: [company_item_id]
       references: [id]
-      table: payments
+      table: company_items
 # クーポン配布
 coupon_distributions:
   columns:
@@ -62,7 +63,9 @@ coupon_distributions:
     distribution_status: # 配布状況フラグ
       type: unsignedTinyInteger
       default: 0
-    distributed_at: dateTime # 配布日時
+    distributed_at: # 配布日時
+      type: dateTime
+      nullable:
     timestamps:
   indexes:
     - columns: [coupon_id, user_id]

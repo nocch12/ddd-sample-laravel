@@ -17,12 +17,13 @@ return new class extends Migration
             $table->string('id');
             $table->string('name');
             $table->string('company_id');
-            $table->unsignedInteger('distributionLimit');
+            $table->unsignedInteger('distribution_limit');
             $table->dateTime('distribution_begin');
             $table->dateTime('distribution_end');
             $table->dateTime('use_begin');
             $table->dateTime('use_end');
             $table->double('point_rate', 4, 1);
+            $table->string('coupon_type');
             $table->timestamps();
         });
     }

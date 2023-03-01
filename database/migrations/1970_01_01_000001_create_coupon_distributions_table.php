@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('coupon_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedTinyInteger('distribution_status')->default(0);
-            $table->dateTime('distributed_at');
+            $table->dateTime('distributed_at')->nullable();
             $table->timestamps();
         });
     }

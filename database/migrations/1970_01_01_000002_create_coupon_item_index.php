@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('coupon_shops', function (Blueprint $table) {
-            $table->unique(['coupon_id', 'shop_id']);
+        Schema::table('coupon_item', function (Blueprint $table) {
+            $table->unique(['coupon_id', 'company_item_id']);
         });
     }
 
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('coupon_shops', function (Blueprint $table) {
-            $table->dropUnique(['coupon_id', 'shop_id']);
+        Schema::table('coupon_item', function (Blueprint $table) {
+            $table->dropUnique(['coupon_id', 'company_item_id']);
         });
     }
 };
